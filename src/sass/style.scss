@@ -1,0 +1,8 @@
+@import "utils/variables.scss";
+
+body {
+    font-family: $font-text;
+    max-width: $max-width;
+    margin: auto;
+    margin-top: 20px;
+}

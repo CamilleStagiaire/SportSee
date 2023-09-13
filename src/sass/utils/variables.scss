@@ -1,0 +1,29 @@
+// police
+$font-text: 'Roboto', sans-serif;
+
+// les couleurs
+$color-primary: #FF6060;
+$color-secondary: #F6F6F6;
+$color-star: #E3E3E3;
+$color-footer : #000000;
+
+// border-radius
+$border-radius-banner: 25px;
+$border-radius-img: 10px;
+
+
+/* -------------------------
+MEDIA QUERIES 
+----------------------------*/
+// Largeur max
+$max-width: 1440px;
+$max-height: 1024px;
+$min-width: 1024px;
+$min-height: 780px;
+
+// breakpoints
+$small: 768px;
+$large: 1200px;
+
+$small-up: "only screen and (min-width: #{$small})";
+$large-up: "only screen and (min-width: #{$large})";
