@@ -6,3 +6,43 @@ body {
     margin: auto;
     margin-top: 20px;
 }
+
+header {
+    background-color: $color-secondary;
+    display: flex;
+    
+    height: 91px;
+
+    img {
+        margin: auto;
+        margin-left: 28px;
+        Width: 178px;
+        Height: 60.93px;
+        flex: 0 0 auto;
+    }
+
+    nav {
+        flex: 1;
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+    
+}
+
+main {
+    display: flex;
+}
+.left-side-bar {
+    width: 117px;
+    min-height: $min-height;
+    height: 100%;
+    background-color: $color-secondary;
+    color: white;
+   
+ 
+  }
