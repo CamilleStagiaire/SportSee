@@ -12,8 +12,8 @@ export const UserProfileProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const profile = await fetchUserProfileMock(12);
-        const activity = await fetchUserActivityMock(12);
+        const profile = await fetchUserProfileMock(18);
+        const activity = await fetchUserActivityMock(18);
 
         setUserProfile(profile);
         setUserActivity(activity);
