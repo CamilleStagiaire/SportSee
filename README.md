@@ -18,6 +18,13 @@ npm install --save-dev eslint-config-prettier
 npm install sass  
 npm install react-router-dom
 
+- Installation de la bibliothèque Recharts:  
+npm install recharts
+
+- Création des graphiques:  
+composant UserActivity pour le BarChart  
+composant UserAverageSessions pour le LineChart 
+composant UserPerformance pour le RadarChart
 
 # Compétences évaluées:
 

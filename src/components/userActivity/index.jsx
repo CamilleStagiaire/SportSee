@@ -1,7 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 
 const UserActivity = ({ data }) => {
-  const maxHeight = 300;
 
 const minKg = Math.min(...data.map(d => d.kilogram));
 const maxKg = Math.max(...data.map(d => d.kilogram));
@@ -9,7 +8,7 @@ const maxCal = Math.max(...data.map(d => d.calories));
 
 // les domaines
 const kgDomain = [minKg - 1, maxKg + 1];
-const calDomain = [0, Math.ceil(maxCal / 100) * 100]; // arrondi à la centaine supérieure
+const calDomain = [0, Math.ceil(maxCal / 100) * 100];
 
 //la taille de la barre
 const kgBarSize = 70; 
@@ -20,7 +19,7 @@ const calBarSize = 70 * (maxCal / 200);
     <h1 style={{ fontSize: '18px', textAlign: 'left' }}>
       Activités quotidiennes
     </h1>
-    <BarChart width={600} height={maxHeight} data={data}>
+    <BarChart width={600} height={300} data={data}>
   
       <CartesianGrid vertical={false} strokeDasharray="1 1"/>
       <XAxis dataKey="day" tickFormatter={(tick) => tick.split("-")[2].substring(1)} />
