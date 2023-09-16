@@ -27,7 +27,10 @@ export const fetchUserAverageSessionsMock = async (userId) => {
 export const fetchUserPerformanceMock = async (userId) => {
     const performance = USER_PERFORMANCE.find(performance => performance.userId === userId);
     if (performance) {
-        return performance.data;
+        return {
+            data: performance.data,
+            kind: performance.kind
+        };
     }
     throw new Error('Performances non trouvées pour cet utilisateur');
 }

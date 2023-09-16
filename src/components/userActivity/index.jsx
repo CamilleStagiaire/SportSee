@@ -10,10 +10,6 @@ const maxCal = Math.max(...data.map(d => d.calories));
 const kgDomain = [minKg - 1, maxKg + 1];
 const calDomain = [0, Math.ceil(maxCal / 100) * 100];
 
-//la taille de la barre
-const kgBarSize = 70; 
-const calBarSize = 70 * (maxCal / 200);
-  
   return (
     <div>
     <h1 style={{ fontSize: '18px', textAlign: 'left' }}>
@@ -27,8 +23,8 @@ const calBarSize = 70 * (maxCal / 200);
       <YAxis yAxisId="left" orientation="right" domain={kgDomain} ticks={[minKg - 2, minKg, minKg + 2]} /> 
       <YAxis yAxisId="right" orientation="left" domain={calDomain} hide = {true}/> 
       
-      <Bar yAxisId="left" dataKey="kilogram" fill="#82ca9d" barSize={kgBarSize} /> 
-      <Bar yAxisId="right" dataKey="calories" fill="#8884d8" barSize={calBarSize} />
+      <Bar yAxisId="left" dataKey="kilogram" fill="#82ca9d" barSize={10} /> 
+      <Bar yAxisId="right" dataKey="calories" fill="#8884d8" barSize={10} />
 
       <Legend 
         verticalAlign="top"
