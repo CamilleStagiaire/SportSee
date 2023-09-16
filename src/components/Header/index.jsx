@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 
+
 const TopNavBar = () => {
     return (
         
       <header className="header">
+       
         <img src={logo} alt="Logo SportSee" />
        <nav>
         <Link to="/" aria-label="Accéder à la page d'accueil">Accueil</Link>
@@ -12,6 +14,7 @@ const TopNavBar = () => {
         <Link to="#" aria-label="Accéder à la page réglage">Réglage</Link>
         <Link to="#" aria-label="Accéder à la page communauté">Communauté</Link>
        </nav>
+    
       </header>
     );
   };

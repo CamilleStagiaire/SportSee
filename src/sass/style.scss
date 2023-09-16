@@ -36,13 +36,17 @@ header {
 
 main {
     display: flex;
+   
 }
 .left-side-bar {
     width: 117px;
     min-height: $min-height;
     height: 100%;
     background-color: $color-secondary;
-    color: white;
-   
- 
+    color: white; 
   }
+
+
+.pieChart {
+    background-color: rgb(188, 188, 188);
+}

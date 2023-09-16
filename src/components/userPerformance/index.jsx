@@ -8,9 +8,9 @@ const transformData = ({ data, kind }) => {
 };
 
 const UserPerformance = ({ data }) => {
-    console.log('data',data);
+   // console.log('data',data);
     const transformedData = transformData(data);
-    console.log('transformateData',transformedData);
+   // console.log('transformateData',transformedData);
 
     return (
             <RadarChart cx="50%" cy="50%" outerRadius="50%" data={transformedData} width={300} height={300}>

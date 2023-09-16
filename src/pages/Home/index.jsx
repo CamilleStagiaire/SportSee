@@ -3,6 +3,7 @@ import LeftSideBar from '../../components/LeftSideBar';
 import UserActivity from '../../components/userActivity';
 import UserAverageSessions from '../../components/userAverageSessions';
 import UserPerformance from '../../components/userPerformance';
+import UserScore from '../../components/userScore';
 import { UserContext } from '../../contexts/UserContext';
 
 function Home() {
@@ -24,6 +25,7 @@ function Home() {
           <div>
             <UserAverageSessions data={userAverageSessions} />
             <UserPerformance data={userPerformance} />
+            <UserScore score={userProfile?.todayScore ?? userProfile?.score} />
           </div>
         </>
       ) : null}
