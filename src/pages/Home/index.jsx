@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import LeftSideBar from '../../components/LeftSideBar';
-import UserInfos from '../../components/userInfos';
-import UserActivity from '../../components/userActivity';
-import UserAverageSessions from '../../components/userAverageSessions';
-import UserPerformance from '../../components/userPerformance';
-import UserScore from '../../components/userScore';
+import UserInfos from '../../components/UserInformations';
+import UserActivity from '../../components/UserActivity';
+import UserAverageSessions from '../../components/UserAverageSessions';
+import UserPerformance from '../../components/UserPerformance';
+import UserScore from '../../components/UserScore';
 import { UserContext } from '../../contexts/UserContext';
 
 function Home() {
@@ -21,11 +21,11 @@ function Home() {
             {userProfile.userInfos.lastName}!
           </h1>
           <div className="dashboard">
-            <div>
-              <div className="dashboard-graphs">
+            <div className="dashboard-graphs">
+              <div>
                 <UserActivity data={userActivity} />
               </div>
-              <div className="dashboard-graphs">
+              <div >
                 <UserAverageSessions data={userAverageSessions} />
                 <UserPerformance data={userPerformance} />
                 <UserScore

@@ -49,12 +49,28 @@ main {
 .dashboard{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
+
+    &-infos {
+        min-width: 200px;
+
+       
+        li {
+            list-style-type: none;
+            display: flex;
+        }
+
+    }
+}
+
+.button-with-icon {
+    width: 50px;
 }
 .left-side-bar {
     width: 117px;
     min-height: $min-height;
+    //max-height: 100%;
     height: 100%;
     background-color: $color-secondary;
     color: white; 

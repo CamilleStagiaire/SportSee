@@ -27,7 +27,12 @@ composant UserAverageSessions pour le LineChart
 composant UserPerformance pour le RadarChart  
 composant UserScore pour le PieChart  
 
-- styles des graphiques
+- styles des graphiques  
+
+- composant UserInfos  
+- composant Button
+
+- style de la page
 
 # Compétences évaluées:
 
