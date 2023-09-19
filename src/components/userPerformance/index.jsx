@@ -1,24 +1,32 @@
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
 
-const transformData = ({ data, kind }) => {
+const transformData = ({ data }) => {
+        const translationMap = {
+        1: 'Cardio',
+        2: 'Énergie',
+        3: 'Endurance',
+        4: 'Force',
+        5: 'Vitesse',
+        6: 'Intensité'
+    };
+
     return data.map(item => ({
-        subject: kind[item.kind],
-        value: item.value,
+        subject: translationMap[item.kind] || item.kind,
+        value: item.value
     }));
 };
 
 const UserPerformance = ({ data }) => {
-   // console.log('data',data);
     const transformedData = transformData(data);
-   // console.log('transformateData',transformedData);
+    console.log('transformateData :', transformedData);
 
     return (
-            <RadarChart cx="50%" cy="50%" outerRadius="50%" data={transformedData} width={300} height={300}>
-                <PolarGrid />
-                <PolarAngleAxis dataKey="subject" />
-                <PolarRadiusAxis />
-                <Radar name="User" dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-            </RadarChart>
+        <RadarChart cx="50%" cy="50%" outerRadius="50%" data={transformedData} width={300} height={300}>
+            <PolarGrid />
+            <PolarAngleAxis dataKey="subject" />
+            <PolarRadiusAxis tick={false}  />
+            <Radar name="User" dataKey="value" stroke="none" className="radar-chart" fillOpacity={0.6} />
+        </RadarChart>
     );
 };
 

@@ -28,10 +28,9 @@ const UserScore = ({ score }) => {
           outerRadius={55}
           dataKey="value"
           startAngle={90}
-        
         >
-          <Cell fill="red" />
-          <Cell fill="transparent" />
+          <Cell fill="red" stroke="none" />
+          <Cell fill="transparent" stroke="none" />
         </Pie>
        
       </PieChart>

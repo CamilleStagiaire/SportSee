@@ -9,13 +9,15 @@ export const UserProfileProvider = ({ children }) => {
   const [userAverageSessions, setUserAverageSessions] = useState(null);
   const [userPerformance, setUserPerformance] = useState(null);
 
+  const USER_ID = 18;
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const profile = await fetchUserProfileMock(18);
-        const activity = await fetchUserActivityMock(18);
-        const averageSessions = await fetchUserAverageSessionsMock(18);
-        const performance = await fetchUserPerformanceMock(18);
+        const profile = await fetchUserProfileMock(USER_ID);
+        const activity = await fetchUserActivityMock(USER_ID);
+        const averageSessions = await fetchUserAverageSessionsMock(USER_ID);
+        const performance = await fetchUserPerformanceMock(USER_ID);
 
         setUserProfile(profile);
         setUserActivity(activity);

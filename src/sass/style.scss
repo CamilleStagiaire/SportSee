@@ -16,8 +16,8 @@ header {
     img {
         margin: auto;
         margin-left: 28px;
-        Width: 178px;
-        Height: 60.93px;
+        width: 178px;
+        height: 60.93px;
         flex: 0 0 auto;
     }
 
@@ -36,7 +36,21 @@ header {
 
 main {
     display: flex;
+    width: 100;
    
+}
+.home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dashboard{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 .left-side-bar {
     width: 117px;
@@ -49,4 +63,14 @@ main {
 
 .pieChart {
     background-color: rgb(188, 188, 188);
+}
+
+.radar-chart {
+    fill: $radar-color;
+}
+
+.bar-chart {
+    &-1 > path{
+        color: $color-primary;
+    }
 }

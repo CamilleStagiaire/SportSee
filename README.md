@@ -23,8 +23,11 @@ npm install recharts
 
 - Création des graphiques:  
 composant UserActivity pour le BarChart  
-composant UserAverageSessions pour le LineChart 
-composant UserPerformance pour le RadarChart
+composant UserAverageSessions pour le LineChart  
+composant UserPerformance pour le RadarChart  
+composant UserScore pour le PieChart  
+
+- styles des graphiques
 
 # Compétences évaluées:
 
