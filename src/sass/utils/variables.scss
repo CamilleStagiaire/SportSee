@@ -2,16 +2,17 @@
 $font-text: 'Roboto', sans-serif;
 
 // les couleurs
-$color-primary: #FF0000;
-$color-secondary: #000000;
-$color-tertiary: #C4C4C4;
-$color-bars: #E60000;
-$color-icon : #FF0101;
-$radar-color: #8884d8;
+$black1: #000000;
+$black2: #282D30;
 
-// border-radius
-// $border-radius-banner: 25px;
-// $border-radius-img: 10px;
+$red1: #FF0000;
+$red2: #FF0101;
+$red3:#E60000;
+
+$grey1: #FBFBFB;
+$grey2: #DEDEDE;
+$grey3: #9B9EAC;
+$grey4: #74798C;
 
 
 /* -------------------------
@@ -29,3 +30,19 @@ $min-height: 780px;
 
 // $small-up: "only screen and (min-width: #{$small})";
 // $large-up: "only screen and (min-width: #{$large})";
+
+// $large-up: "only screen and (min-width: #{$large})";
+
+
+:export {
+    black1: $black1;
+    black2: $black2;
+    red1: $red1;
+    red2: $red2;
+    red3: $red3;
+    grey1: $grey1;
+    grey2: $grey2;
+    grey3: $grey3;
+    grey4: $grey4;
+  }
+  

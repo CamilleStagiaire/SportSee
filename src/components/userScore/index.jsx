@@ -7,8 +7,8 @@ const UserScore = ({ score }) => {
   ];
   
   return (
-    <div className="pieChart">
-         <h1 style={{ fontSize: '18px', textAlign: 'left' }}>
+    <div className="pieChart graph">
+         <h1>
          {`${Math.round(score * 100)}% de votre objectif`}
     </h1>
       <PieChart width={120} height={120}>

@@ -21,7 +21,7 @@ const UserPerformance = ({ data }) => {
     console.log('transformateData :', transformedData);
 
     return (
-        <RadarChart cx="50%" cy="50%" outerRadius="50%" data={transformedData} width={300} height={300}>
+        <RadarChart className="radar graph" cx="50%" cy="50%" outerRadius="50%" data={transformedData} width={258} height={263}>
             <PolarGrid />
             <PolarAngleAxis dataKey="subject" />
             <PolarRadiusAxis tick={false}  />

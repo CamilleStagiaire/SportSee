@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ButtonWithIcon = ({ svgIcon }) => {
+const ButtonWithIcon = ({ svgIcon, color }) => {
   return (
-    <button className="button-with-icon">
+    <button className="button-with-icon" style={{ backgroundColor: color }}>
       {svgIcon}
     </button>
   );

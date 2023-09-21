@@ -11,9 +11,9 @@ const dayMap = {
 };
 
 const UserAverageSessions = ({ data }) => (
-  <div className="LineChart" style={{ backgroundColor: 'red', height: '263px', padding: '10px' }}>
+  <div className="lineChart graph">
     <h3>Durée moyenne des sessions</h3>
-    <LineChart width={300} height={200} data={data}>
+    <LineChart width={258} height={232} data={data}>
       <XAxis dataKey="day" tickFormatter={(tick) => dayMap[tick]} />
       <YAxis dataKey="sessionLength" hide = {true}/>
       <Tooltip />

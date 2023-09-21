@@ -22,10 +22,10 @@ function Home() {
           </h1>
           <div className="dashboard">
             <div className="dashboard-graphs">
-              <div>
+              
                 <UserActivity data={userActivity} />
-              </div>
-              <div >
+              
+              <div>
                 <UserAverageSessions data={userAverageSessions} />
                 <UserPerformance data={userPerformance} />
                 <UserScore
