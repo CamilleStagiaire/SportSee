@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell } from 'recharts';
+import {ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 const UserScore = ({ score }) => {
   const data = [
@@ -8,34 +8,44 @@ const UserScore = ({ score }) => {
   
   return (
     <div className="pieChart graph">
-         <h1>
-         {`${Math.round(score * 100)}% de votre objectif`}
-    </h1>
-      <PieChart width={120} height={120}>
-      <Pie
-          dataKey="value"
-          cx={60}
-          cy={60}
-          data={[{ value: 100 }]}
-          fill="#FFFFFF"
-          paddingAngle={0}
-        />
-        <Pie
-          data={data}
-          cx={60}
-          cy={60}
-          innerRadius={45}
-          outerRadius={55}
-          dataKey="value"
-          startAngle={90}
-        >
-          <Cell fill="red" stroke="none" />
-          <Cell fill="transparent" stroke="none" />
-        </Pie>
-       
-      </PieChart>
+      <ResponsiveContainer width="100%" height="100%">
+        <PieChart>
+          <Pie
+            dataKey="value"
+            cx="50%"
+            cy="50%"
+            data={[{ value: 100 }]}
+            fill="#FFFFFF"
+            paddingAngle={0}
+          />
+          <Pie
+            data={data}
+            cx="50%"
+            cy="50%"
+            innerRadius={45}
+            outerRadius={55}
+            dataKey="value"
+            startAngle={90}
+          >
+            <Cell fill="red" stroke="none" />
+            <Cell fill="transparent" stroke="none" />
+          </Pie>
+          <text
+            x="50%"
+            y="50%"
+            dy={5}
+            textAnchor="middle"
+            fill="black"
+            style={{ fontSize: '14px', fontFamily: 'Arial' }}
+          >
+            {`${Math.round(score * 100)}% de votre objectif`}
+          </text>
+        </PieChart>
+      </ResponsiveContainer>
     </div>
   );
+  
+  
 };
 
 export default UserScore;

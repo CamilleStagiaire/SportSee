@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import LeftSideBar from '../../components/LeftSideBar';
+//import LeftSideBar from '../../components/LeftSideBar';
 import UserInfos from '../../components/UserInformations';
 import UserActivity from '../../components/UserActivity';
 import UserAverageSessions from '../../components/UserAverageSessions';
@@ -13,19 +13,20 @@ function Home() {
   console.log('userProfile', userProfile);
   return (
     <main>
-      <LeftSideBar />
+      
       {userProfile ? (
         <div className="home">
-          <h1>
+         <div className="home-text">
+         <h1>
             Bonjour, {userProfile.userInfos.firstName}{' '}
             {userProfile.userInfos.lastName}!
           </h1>
+          <p>Félicitation</p>
+         </div>
           <div className="dashboard">
-            <div className="dashboard-graphs">
-              
+            <div className="dashboard-user">
                 <UserActivity data={userActivity} />
-              
-              <div>
+              <div className="dashboard-graphs">
                 <UserAverageSessions data={userAverageSessions} />
                 <UserPerformance data={userPerformance} />
                 <UserScore

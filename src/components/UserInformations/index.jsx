@@ -15,28 +15,28 @@ const UserInfos = ({ keyData }) => {
     <ul>
       <li>
         <ButtonWithIcon svgIcon={<img src={CaloriesSvg} alt="Calories" />} color={caloriesColor} />
-        <div>
+        <div className="infos-btn">
           <h4>{keyData.calorieCount}KCal</h4>
           <p>Calories</p>
         </div>
       </li>
       <li>
         <ButtonWithIcon svgIcon={<img src={ProteinesSvg} alt="Proteines" />} color={proteinesColor} />
-        <div>
+        <div className="infos-btn">
           <h4>{keyData.proteinCount}g</h4>
           <p>Protéines</p>
         </div>
       </li>
       <li>
         <ButtonWithIcon svgIcon={<img src={GlucidesSvg} alt="Glucides" />} color={glucidesColor} />
-        <div>
+        <div className="infos-btn">
           <h4>{keyData.carbohydrateCount}g</h4>
           <p>Glucides</p>
         </div>
       </li>
       <li>
         <ButtonWithIcon svgIcon={<img src={LipidesSvg} alt="Lipides" />} color={lipidesColor} />
-        <div>
+        <div className="infos-btn">
           <h4>{keyData.lipidCount}g</h4>
           <p>Lipides</p>
         </div>

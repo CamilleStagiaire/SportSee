@@ -1,4 +1,4 @@
-import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
+import {ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
 
 const transformData = ({ data }) => {
         const translationMap = {
@@ -21,13 +21,16 @@ const UserPerformance = ({ data }) => {
     console.log('transformateData :', transformedData);
 
     return (
-        <RadarChart className="radar graph" cx="50%" cy="50%" outerRadius="50%" data={transformedData} width={258} height={263}>
-            <PolarGrid />
-            <PolarAngleAxis dataKey="subject" />
-            <PolarRadiusAxis tick={false}  />
-            <Radar name="User" dataKey="value" stroke="none" className="radar-chart" fillOpacity={0.6} />
-        </RadarChart>
+        <ResponsiveContainer className="graph" width="100%" height="100%">
+            <RadarChart className="radar graph" cx="50%" cy="50%" outerRadius="50%" data={transformedData}>
+                <PolarGrid />
+                <PolarAngleAxis dataKey="subject" />
+                <PolarRadiusAxis tick={false}  />
+                <Radar name="User" dataKey="value" stroke="none" className="radar-chart" fillOpacity={0.6} />
+            </RadarChart>
+        </ResponsiveContainer>
     );
+    
 };
 
 export default UserPerformance;

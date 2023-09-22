@@ -9,9 +9,9 @@ https://github.com/CamilleStagiaire/SportSee.git
 - Initialisation du projet:  
 **Dossier SporteseeProject:**  
 installation et lancement du backend:  
-git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git
+git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git  
 npm install  
-npm run start
+npm run start  
 **Dossier sportsee:**  
 npx create-react-app sportsee  
 npm install --save-dev eslint-config-prettier   

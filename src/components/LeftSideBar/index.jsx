@@ -4,6 +4,7 @@ const LeftSideBar = () => {
       <button>Option 1</button>
       <button>Option 2</button>
       <button>Option 3</button>
+      <p>Copiryght, SportSee 2020</p>
     </div>
   );
 };
