@@ -9,7 +9,10 @@ export const UserProfileProvider = ({ children }) => {
   const [userAverageSessions, setUserAverageSessions] = useState(null);
   const [userPerformance, setUserPerformance] = useState(null);
 
-  const USER_ID = 18
+  const USER_ID = 12
+  
+
+
   
   ;
 

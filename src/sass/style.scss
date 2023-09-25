@@ -3,12 +3,19 @@
 body {
     font-family: $font-text;
     max-width: $max-width;
+    max-height: $max-height;
     margin: auto;
 }
 
 h1 {
     margin-top: 5vh;
     margin-bottom: 3vh;
+}
+
+.home-text {
+    p {
+        margin-bottom: 3vh;
+    }
 }
 
 .left-side-bar {
@@ -68,63 +75,38 @@ main {
     display: flex;
     margin: auto;
     gap: 3vw;
-
+    height: 65vh;
     margin-top: 2vh;
 
-    @media #{$medium-up} {
-        margin-top: 3vh;
-    }
-
-    @media #{$large-up} {
-        margin-top: 4vh;
-    }
-
     &-user {
-        height: 65vh;
+        flex: 3;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        flex: 3;
+        justify-content: space-between;
         gap: 3vh;
-
-        @media #{$medium-up} {
-            gap: 5vh;
-        }
-
-        @media #{$large-up} {
-            gap: 3vh;
-        }
     }
 
-    &-infos {
-        flex: 1;
+     &-infos {
+         flex: 1;
 
         ul {
+            height: 100%;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             gap: 3vh;
-
-            @media #{$medium-up} {
-                gap: 6vh;
-            }
-
-            @media #{$large-up} {
-                gap: 5vh;
-            }
         }
 
         li {
-            padding: 0.5vh;
+            flex: 1; 
             align-items: center;
             background-color: $grey2;
             list-style-type: none;
             display: flex;
-            gap: 0.5vw;
 
             button {
-                margin: 2vw;
+                margin: 1vw;
             }
 
             h4,
@@ -132,7 +114,7 @@ main {
                 margin: 0;
             }
         }
-    }
+     }
 
     &-barChart {
         height: 35vh;
@@ -140,9 +122,9 @@ main {
 
     &-graphs {
         display: flex;
-        flex: 1;
+        flex:0.9;
         gap: 3vw;
-
+       
         .graph {
             flex: 1;
         }
@@ -156,7 +138,6 @@ main {
     border-radius: 7px;
 }
 
-
 .lineChart {
     background-color: bisque;
 }
@@ -169,7 +150,7 @@ main {
     background-color: rgb(195, 255, 0);
 }
 
-.custom-tooltip {
+.tooltip-barChart {
     background-color: #E60000;
     color: white;
     padding: 5px;
@@ -178,7 +159,7 @@ main {
     font-weight: 500;
 }
 
-.legend {
+.barChart-legend {
     display: flex;
     justify-content: space-between;
     gap: 20px;

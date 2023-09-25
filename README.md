@@ -32,7 +32,7 @@ composant UserScore pour le PieChart
 - composant UserInfos  
 - composant Button
 
-- style de la page
+- style de la page + responsivité
 
 # Compétences évaluées:
 
