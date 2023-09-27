@@ -29,7 +29,7 @@ const UserScore = ({ score }) => {
             dataKey="value"
             cx="50%"
             cy="50%"
-            outerRadius={80}
+            outerRadius={75}
             data={[{ value: 100 }]}
             fill={COLORS.CIRCLE}
             paddingAngle={0}
@@ -38,8 +38,8 @@ const UserScore = ({ score }) => {
             data={data}
             cx="50%"
             cy="50%"
-            innerRadius={80}
-            outerRadius={90}
+            innerRadius={75}
+            outerRadius={85}
             dataKey="value"
             startAngle={90}
             cornerRadius={10}

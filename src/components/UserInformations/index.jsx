@@ -5,45 +5,26 @@ import GlucidesSvg from '../../assets/glucides.svg';
 import LipidesSvg from '../../assets/lipides.svg';
 
 const UserInfos = ({ keyData }) => {
-  const caloriesColor = 'rgba(255, 0, 0, 0.1)';
-  const proteinesColor = 'rgba(74, 184, 255, 0.1)';
-  const glucidesColor = 'rgba(249, 206, 35, 0.1)';
-  const lipidesColor = 'rgba(253, 81, 129, 0.1)';
-  
+  const items = [
+    { svg: CaloriesSvg, alt: "Calories", color: 'rgba(255, 0, 0, 0.1)', value: keyData.calorieCount + "KCal", label: "Calories" },
+    { svg: ProteinesSvg, alt: "Proteines", color: 'rgba(74, 184, 255, 0.1)', value: keyData.proteinCount + "g", label: "Protéines" },
+    { svg: GlucidesSvg, alt: "Glucides", color: 'rgba(249, 206, 35, 0.1)', value: keyData.carbohydrateCount + "g", label: "Glucides" },
+    { svg: LipidesSvg, alt: "Lipides", color: 'rgba(253, 81, 129, 0.1)', value: keyData.lipidCount + "g", label: "Lipides" },
+  ];
 
   return (
     <ul>
-      <li>
-        <ButtonWithIcon svgIcon={<img src={CaloriesSvg} alt="Calories" />} color={caloriesColor} />
-        <div className="infos-btn">
-          <h4>{keyData.calorieCount}KCal</h4>
-          <p>Calories</p>
-        </div>
-      </li>
-      <li>
-        <ButtonWithIcon svgIcon={<img src={ProteinesSvg} alt="Proteines" />} color={proteinesColor} />
-        <div className="infos-btn">
-          <h4>{keyData.proteinCount}g</h4>
-          <p>Protéines</p>
-        </div>
-      </li>
-      <li>
-        <ButtonWithIcon svgIcon={<img src={GlucidesSvg} alt="Glucides" />} color={glucidesColor} />
-        <div className="infos-btn">
-          <h4>{keyData.carbohydrateCount}g</h4>
-          <p>Glucides</p>
-        </div>
-      </li>
-      <li>
-        <ButtonWithIcon svgIcon={<img src={LipidesSvg} alt="Lipides" />} color={lipidesColor} />
-        <div className="infos-btn">
-          <h4>{keyData.lipidCount}g</h4>
-          <p>Lipides</p>
-        </div>
-      </li>
+      {items.map((item, index) => (
+        <li key={index}>
+          <ButtonWithIcon svgIcon={<img src={item.svg} alt={item.alt} />} color={item.color} />
+          <div className="infos-btn">
+            <h4 className="infos-btn-value">{item.value}</h4>
+            <p className="infos-btn-title">{item.label}</p>
+          </div>
+        </li>
+      ))}
     </ul>
   );
 };
-
 
 export default UserInfos;

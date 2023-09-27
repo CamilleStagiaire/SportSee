@@ -32,7 +32,7 @@ const UserPerformance = ({ data }) => {
 
     return (
         <ResponsiveContainer className="graph" width="100%" height="100%">
-            <RadarChart className="radar graph" cx="50%" cy="50%" outerRadius="50%" data={transformedData}>
+            <RadarChart className="radar graph" cx="50%" cy="50%" outerRadius="55%" data={transformedData}>
                 <PolarGrid />
                 <PolarAngleAxis dataKey="subject" dx= {-5}  tick={{ fontSize: 10 }}/>
                 <PolarRadiusAxis tick={false}  />

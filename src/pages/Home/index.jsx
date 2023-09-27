@@ -13,18 +13,22 @@ function Home() {
   console.log('userProfile', userProfile);
   return (
     <main>
-      
       {userProfile ? (
         <div className="home">
-         <div className="home-text">
-         <h1>
-            Bonjour <span className="home-text-name">{userProfile.userInfos.firstName}{' '}</span>
-          </h1>
-          <p className="home-text-p">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-         </div>
+          <div className="home-text">
+            <h1>
+              Bonjour{' '}
+              <span className="home-text-name">
+                {userProfile.userInfos.firstName}{' '}
+              </span>
+            </h1>
+            <p className="home-text-p">
+              Félicitation ! Vous avez explosé vos objectifs hier 👏
+            </p>
+          </div>
           <div className="dashboard">
             <div className="dashboard-user">
-                <UserActivity data={userActivity} />
+              <UserActivity data={userActivity} />
               <div className="dashboard-graphs">
                 <UserAverageSessions data={userAverageSessions} />
                 <UserPerformance data={userPerformance} />
