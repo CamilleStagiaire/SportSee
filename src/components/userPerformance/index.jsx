@@ -16,6 +16,16 @@ const transformData = ({ data }) => {
     }));
 };
 
+// const CustomTick = (props) => {
+//     const { x, y, payload } = props;
+    
+//     return (
+//         <text x={x} y={y} dy={10} dx={0}  textAnchor="middle" fill="#666" fontSize="0.7em">
+//             {payload.value}
+//         </text>
+//     );
+// };
+
 const UserPerformance = ({ data }) => {
     const transformedData = transformData(data);
     console.log('transformateData :', transformedData);
@@ -24,7 +34,7 @@ const UserPerformance = ({ data }) => {
         <ResponsiveContainer className="graph" width="100%" height="100%">
             <RadarChart className="radar graph" cx="50%" cy="50%" outerRadius="50%" data={transformedData}>
                 <PolarGrid />
-                <PolarAngleAxis dataKey="subject" />
+                <PolarAngleAxis dataKey="subject" dx= {-5}  tick={{ fontSize: 10 }}/>
                 <PolarRadiusAxis tick={false}  />
                 <Radar name="User" dataKey="value" stroke="none" className="radar-chart" fillOpacity={0.6} />
             </RadarChart>

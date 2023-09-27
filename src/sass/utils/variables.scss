@@ -5,6 +5,8 @@ $font-text: 'Roboto', sans-serif;
 $black1: #000000;
 $black2: #282D30;
 
+$white: #FFFFFF;
+
 $red1: #FF0000;
 $red2: #FF0101;
 $red3:#E60000;
@@ -37,6 +39,7 @@ $max-height: 1024px;
 :export {
     black1: $black1;
     black2: $black2;
+    white: $white;
     red1: $red1;
     red2: $red2;
     red3: $red3;

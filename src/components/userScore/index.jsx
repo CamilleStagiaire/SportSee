@@ -1,4 +1,19 @@
-import {ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import {Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import SCSS_COLORS from '../../sass/utils/variables.scss';
+
+const COLORS = {
+SCORE: SCSS_COLORS.red1,
+CIRCLE: SCSS_COLORS.white,
+};
+
+const CustomLegend = () => {
+  return (
+      <div className="PieChart-legend" style={{ listStyleType: 'none', paddingLeft: 0 }}>
+          Score
+      </div>
+  );
+};
+
 
 const UserScore = ({ score }) => {
   const data = [
@@ -14,20 +29,22 @@ const UserScore = ({ score }) => {
             dataKey="value"
             cx="50%"
             cy="50%"
+            outerRadius={80}
             data={[{ value: 100 }]}
-            fill="#FFFFFF"
+            fill={COLORS.CIRCLE}
             paddingAngle={0}
           />
           <Pie
             data={data}
             cx="50%"
             cy="50%"
-            innerRadius={45}
-            outerRadius={55}
+            innerRadius={80}
+            outerRadius={90}
             dataKey="value"
             startAngle={90}
+            cornerRadius={10}
           >
-            <Cell fill="red" stroke="none" />
+            <Cell fill={COLORS.SCORE} stroke="none" />
             <Cell fill="transparent" stroke="none" />
           </Pie>
           <text
@@ -35,12 +52,18 @@ const UserScore = ({ score }) => {
             y="50%"
             dy={5}
             textAnchor="middle"
-            fill="black"
-            style={{ fontSize: '14px', fontFamily: 'Arial' }}
+       
           >
-            {`${Math.round(score * 100)}% de votre objectif`}
+            <tspan className="pieChart-percentage">
+            {`${Math.round(score * 100)}%`}
+            </tspan>
+            <tspan x="50%" dy={20} className="pieChart-text">
+    de votre objectif
+  </tspan>
           </text>
+          <Legend content={<CustomLegend />} verticalAlign="top" />
         </PieChart>
+      
       </ResponsiveContainer>
     </div>
   );

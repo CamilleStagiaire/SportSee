@@ -18,10 +18,9 @@ function Home() {
         <div className="home">
          <div className="home-text">
          <h1>
-            Bonjour, {userProfile.userInfos.firstName}{' '}
-            {userProfile.userInfos.lastName}!
+            Bonjour <span className="home-text-name">{userProfile.userInfos.firstName}{' '}</span>
           </h1>
-          <p>Félicitation</p>
+          <p className="home-text-p">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
          </div>
           <div className="dashboard">
             <div className="dashboard-user">

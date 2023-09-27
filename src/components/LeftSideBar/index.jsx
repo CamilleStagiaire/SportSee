@@ -1,10 +1,32 @@
+import ButtonWithIcon from '../ButtonWithIcon';
+import Icon1Svg from '../../assets/icon1.svg';
+import Icon2Svg from '../../assets/icon2.svg';
+import Icon3Svg from '../../assets/icon3.svg';
+import Icon4Svg from '../../assets/icon4.svg';
+
 const LeftSideBar = () => {
+  const Color = '#FFFFFF';
   return (
-    <div className="left-side-bar">
-      <button>Option 1</button>
-      <button>Option 2</button>
-      <button>Option 3</button>
-      <p>Copiryght, SportSee 2020</p>
+    <div className="lefSideBar">
+      <div className="lefSideBar-buttons">
+        <ButtonWithIcon
+          svgIcon={<img src={Icon1Svg} alt="Icon1" />}
+          color={Color}
+        />
+        <ButtonWithIcon
+          svgIcon={<img src={Icon2Svg} alt="Icon2" />}
+          color={Color}
+        />
+        <ButtonWithIcon
+          svgIcon={<img src={Icon3Svg} alt="Icon3" />}
+          color={Color}
+        />
+        <ButtonWithIcon
+          svgIcon={<img src={Icon4Svg} alt="Icon4" />}
+          color={Color}
+        />
+      </div>
+      <p div className="lefSideBar-text">Copyright, SportSee 2020</p>
     </div>
   );
 };
