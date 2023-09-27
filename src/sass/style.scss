@@ -236,7 +236,8 @@ main {
 }
 
 .radar {
-    background-color: rgb(195, 255, 0);
+    background-color: $black2;
+    border-radius: 5px;
 
     &-text {
         padding: 40px;

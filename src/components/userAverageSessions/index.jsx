@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ReferenceArea, ResponsiveContainer, LineChart, YAxis, Tooltip, Line } from 'recharts';
-
 import SCSS_COLORS from '../../sass/utils/variables.scss';
 
 const COLORS = {
@@ -21,7 +20,6 @@ const CustomTooltip = ({ payload }) => {
     return null;
 };
 
-
 const CustomDot = ({ cx, cy, payload, hoveredData }) => {
   if (hoveredData && payload.day === hoveredData.day) {
     return (
@@ -33,7 +31,6 @@ const CustomDot = ({ cx, cy, payload, hoveredData }) => {
   }
   return null;
 };
-
 
 const UserAverageSessions = ({ data }) => {
   const [hoveredData, setHoveredData] = useState(null);
