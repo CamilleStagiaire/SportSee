@@ -29,26 +29,10 @@ const UserPerformance = ({ data }) => {
 
   return (
     <ResponsiveContainer className="graph" width="100%" height="100%">
-      <RadarChart
-        className="radar graph"
-        cx="50%"
-        cy="50%"
-        outerRadius="60%"
-        data={transformedData}
-      >
+      <RadarChart className="radar graph" cx="50%" cy="50%" outerRadius="60%" data={transformedData} >
         <PolarGrid />
-        <PolarAngleAxis
-          dataKey="kind"
-          tick={{ fontSize: 12, fill: COLORS.TICKS }}
-        />
-        <Radar
-          name="User"
-          dataKey="value"
-          stroke="none"
-          className="radar-chart"
-          fill={COLORS.FILL}
-          fillOpacity={0.7}
-        />
+        <PolarAngleAxis dataKey="kind" tick={{ fontSize: 12, fill: COLORS.TICKS }} />
+        <Radar name="User" dataKey="value" stroke="none" className="radar-chart" fill={COLORS.FILL} fillOpacity={0.7} />
       </RadarChart>
     </ResponsiveContainer>
   );

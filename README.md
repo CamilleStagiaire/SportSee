@@ -7,11 +7,13 @@ https://github.com/CamilleStagiaire/SportSee.git
 
 # Etapes
 - Initialisation du projet:  
+
 **Dossier SporteseeProject:**  
 installation et lancement du backend:  
 git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git  
 npm install  
 npm run start  
+
 **Dossier sportsee:**  
 npx create-react-app sportsee  
 npm install --save-dev eslint-config-prettier   
@@ -20,6 +22,8 @@ npm install react-router-dom
 
 - Installation de la bibliothèque Recharts:  
 npm install recharts
+
+- Installation des données mockées  
 
 - Création des graphiques:  
 composant UserActivity pour le BarChart  
@@ -32,7 +36,9 @@ composant UserScore pour le PieChart
 - composant UserInfos  
 - composant Button
 
-- style de la page + responsivité
+- style de la page  
+
+- 
 
 # Compétences évaluées:
 
