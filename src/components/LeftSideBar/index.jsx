@@ -26,7 +26,7 @@ const LeftSideBar = () => {
           color={Color}
         />
       </div>
-      <p div className="lefSideBar-text">Copyright, SportSee 2020</p>
+      <p className="lefSideBar-text">Copyright, SportSee 2020</p>
     </div>
   );
 };

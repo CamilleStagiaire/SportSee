@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
-//import LeftSideBar from '../../components/LeftSideBar';
 import UserInfos from '../../components/UserInformations';
-import UserActivity from '../../components/UserActivity';
-import UserAverageSessions from '../../components/UserAverageSessions';
+import UserActivity from '../../components/userActivity';
+import UserAverageSessions from '../../components/userAverageSessions';
 import UserPerformance from '../../components/UserPerformance';
-import UserScore from '../../components/UserScore';
+import UserScore from '../../components/userScore';
 import { UserContext } from '../../contexts/UserContext';
 
 function Home() {

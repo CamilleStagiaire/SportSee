@@ -3,7 +3,7 @@ import SCSS_COLORS from '../../sass/utils/variables.scss';
 
 const COLORS = {
   BARCHART_BG: SCSS_COLORS.red1,
-  BAR1: SCSS_COLORS.black2,
+  BAR1: SCSS_COLORS.black3,
   BAR2: SCSS_COLORS.red3,
   AXIS_TICK: SCSS_COLORS.grey3,
   XAXIS_STROKE: SCSS_COLORS.grey2,
@@ -53,7 +53,7 @@ const UserActivity = ({ data }) => {
       
       <ResponsiveContainer width="100%" height="100%">
     
-      <BarChart data={data} barGap={8} barCategoryGap={1} style={{ backgroundColor: COLORS.BARCHART_BG }} margin={{ top: 20, left: 50, bottom:30, right:50 }}>
+      <BarChart data={data} barGap={8} barCategoryGap={1}  margin={{ top: 20, left: 50, bottom:30, right:50 }}>
    
         <CartesianGrid vertical={false} strokeDasharray="3 3"/>
         <XAxis dataKey="day" tickFormatter={(tick) => tick.split("-")[2].substring(1)} tick={{ dy: 20, fill: COLORS.AXIS_TICK }} stroke={COLORS.XAXIS_STROKE} tickLine={false} padding={{ left: -52, right: -52 }} />
