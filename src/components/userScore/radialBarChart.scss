@@ -1,5 +1,6 @@
-.pieChart {
+.radialBarChart {
     background-color: $grey1;
+
     border-radius: 5px;
     position: relative;
 
@@ -17,8 +18,8 @@
 
     &-legend {
         position: absolute;
-        top: 30px;
-        left: 30px;
+        top: 2vw;
+        left: 2vh;
         color: $black2;
     }
 }
