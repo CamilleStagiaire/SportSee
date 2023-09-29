@@ -2,14 +2,13 @@ import React, { useContext } from 'react';
 import UserInfos from '../../components/UserInformations';
 import UserActivity from '../../components/userActivity';
 import UserAverageSessions from '../../components/userAverageSessions';
-import UserPerformance from '../../components/UserPerformance';
+import UserPerformance from '../../components/userPerformance';
 import UserScore from '../../components/userScore';
 import { UserContext } from '../../contexts/UserContext';
 
 function Home() {
   const { userProfile, userActivity, userAverageSessions, userPerformance } =
     useContext(UserContext);
-  console.log('userProfile', userProfile);
   return (
     <main>
       {userProfile ? (

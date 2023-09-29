@@ -56,10 +56,11 @@ const UserAverageSessions = ({ data }) => {
         >
           <YAxis dataKey="sessionLength" hide={true} domain={yDomain} />
           <Tooltip content={<CustomTooltip />} />
-          <Line type="monotone" dataKey="sessionLength" stroke={COLORS.STROKE} dot={(props) => <CustomDot {...props} hoveredData={hoveredData} />} strokeWidth={2} />
-           {hoveredData && (
+          {hoveredData && (
             <ReferenceArea x1={hoveredData.day - 1} x2={hoveredData.day === 6 ? hoveredData.day : hoveredData.day + 1} fillOpacity={0.7} fill={COLORS.FILL} />
           )}
+          <Line type="monotone" dataKey="sessionLength" stroke={COLORS.STROKE} dot={(props) => <CustomDot {...props} hoveredData={hoveredData} />} strokeWidth={2} />
+          
         </LineChart>
       </ResponsiveContainer>
     </div>

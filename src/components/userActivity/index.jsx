@@ -12,7 +12,7 @@ const COLORS = {
 const CustomTooltip = ({ payload }) => {
   if (payload && payload.length) {
     return (
-      <div className="tooltip-barChart">
+      <div className="barChart-tooltip">
         <p>{`${payload[0].value}Kg`}</p>
         <p>{`${payload[1].value}Kcal`}</p>
       </div>
@@ -47,7 +47,7 @@ const UserActivity = ({ data }) => {
   const middleTick = Math.round((minTick + maxTick) / 2);
 
   return (
-    <div className="dashboard-barChart">
+    <div className="barChart">
       
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data} barGap={8} barCategoryGap={1}  margin={{ top: 20, left: 50, bottom:30, right:50 }}>

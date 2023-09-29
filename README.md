@@ -38,7 +38,7 @@ composant UserScore pour le PieChart
 
 - style de la page  
 
-- 
+- page d'erreur  
 
 # Compétences évaluées:
 

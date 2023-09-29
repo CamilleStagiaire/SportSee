@@ -1,0 +1,24 @@
+.pieChart {
+    background-color: $grey1;
+    border-radius: 5px;
+    position: relative;
+
+    &-percentage {
+        font-size: 26px;
+        font-weight: 700;
+        fill: $black3;
+    }
+
+    &-text {
+        width: 30px;
+        font-size: 16px;
+        fill: $grey4;
+    }
+
+    &-legend {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: $black2;
+    }
+}

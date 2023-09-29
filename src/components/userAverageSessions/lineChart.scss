@@ -1,0 +1,39 @@
+.lineChart {
+    border-radius: 5px;
+    background-color: $red1;
+    position: relative;
+
+    &-tooltip {
+        font-size: 8px;
+        padding: 5px;
+        background-color: $white;
+    }
+
+    &-legend {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        width: 148px;
+        list-style-type: none;
+        font-size: 15px;
+        color: #FFFFFF;
+        opacity: 50%;
+        z-index: 10;
+    }
+
+    &-days {
+        position: absolute;
+        bottom: 20px;
+        left: 15px;
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        z-index: 10;
+        color: #FFFFFF;
+        opacity: 50%;
+    }
+
+    .recharts-tooltip-cursor {
+        stroke: $red3;
+    }
+}
