@@ -7,7 +7,7 @@ const COLORS = {
 };
 
 const CustomLegend = () => {
-  return <div className="radialBarChart -legend"> Score </div>;
+  return <div className="radialBarChart-legend"> Score </div>;
 };
 
 const UserScore = ({ score }) => {
@@ -17,7 +17,7 @@ const UserScore = ({ score }) => {
   ];
 
   return (
-    <div className="radialBarChart  graph">
+    <div className="radialBarChart graph">
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart innerRadius="70%" outerRadius="90%" data={data} startAngle={90} endAngle={90 + 360} >
            <circle cx="50%" cy="50%" r="31%" fill={COLORS.CIRCLE} />
@@ -27,9 +27,9 @@ const UserScore = ({ score }) => {
           </RadialBar>
          
           <text x="50%" y="45%" dy={5} textAnchor="middle">
-            <tspan className="radialBarChart -percentage"> {`${Math.round(score * 100)}%`} </tspan>
-            <tspan x="50%" dy={20} className="radialBarChart -text">  de votre  </tspan>
-            <tspan x="50%" dy={20} className="radialBarChart -text">  objectif  </tspan>
+            <tspan className="radialBarChart-percentage"> {`${Math.round(score * 100)}%`} </tspan>
+            <tspan x="50%" dy={20} className="radialBarChart-text">  de votre  </tspan>
+            <tspan x="50%" dy={20} className="radialBarChart-text">  objectif  </tspan>
           </text>
           <Legend content={<CustomLegend />} verticalAlign="top" />
         </RadialBarChart>

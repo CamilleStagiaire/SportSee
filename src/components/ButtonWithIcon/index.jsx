@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ButtonWithIcon = ({ svgIcon, color }) => {
   return (
     <button className="button-with-icon" style={{ backgroundColor: color }}>

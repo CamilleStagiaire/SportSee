@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ReferenceArea, ResponsiveContainer, LineChart, YAxis, Tooltip, Line } from 'recharts';
 import SCSS_COLORS from '../../sass/utils/variables.scss';
 
@@ -34,7 +34,17 @@ const CustomDot = ({ cx, cy, payload, hoveredData }) => {
 
 const UserAverageSessions = ({ data }) => {
   const [hoveredData, setHoveredData] = useState(null);
+  const [isAnimationActive, setIsAnimationActive] = useState(true);
   const yDomain = [(dataMin) => dataMin - 20, (dataMax) => dataMax + 20];
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsAnimationActive(false);
+    }, 2000); 
+  
+    return () => clearTimeout(timer);
+  }, []);
+  
 
   return (
     <div className="lineChart graph">
@@ -59,7 +69,7 @@ const UserAverageSessions = ({ data }) => {
           {hoveredData && (
             <ReferenceArea x1={hoveredData.day - 1} x2={hoveredData.day === 6 ? hoveredData.day : hoveredData.day + 1} fillOpacity={0.7} fill={COLORS.FILL} />
           )}
-          <Line type="monotone" dataKey="sessionLength" stroke={COLORS.STROKE} dot={(props) => <CustomDot {...props} hoveredData={hoveredData} />} strokeWidth={2} />
+          <Line type="monotone" dataKey="sessionLength" stroke={COLORS.STROKE} dot={(props) => <CustomDot {...props} hoveredData={hoveredData} />} strokeWidth={2} isAnimationActive={isAnimationActive}/>
           
         </LineChart>
       </ResponsiveContainer>
