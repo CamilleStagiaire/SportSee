@@ -21,7 +21,7 @@ const UserScore = ({ score }) => {
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie dataKey="value" cx="50%" cy="50%" outerRadius={75} data={[{ value: 100 }]} fill={COLORS.CIRCLE} paddingAngle={0} />
-          <Pie data={data} cx="50%" cy="50%" innerRadius={75} outerRadius={85} dataKey="value" startAngle={90} cornerRadius={10} >
+          <Pie data={data}  cx="50%" cy="50%" innerRadius={75} outerRadius={85} dataKey="value" startAngle={-270} endAngle={90} cornerRadius={10} >
             <Cell fill={COLORS.SCORE} stroke="none" />
             <Cell fill="transparent" stroke="none" />
           </Pie>

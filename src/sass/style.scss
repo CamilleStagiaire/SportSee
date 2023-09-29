@@ -123,26 +123,26 @@ main {
     &-infos {
         flex: 1;
 
-        ul {
+        .cards {
             height: 100%;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             gap: 3vh;
-        }
 
-        li {
-            flex: 1;
-            padding-left: 10px;
-            background-color: $grey1;
-            border-radius: 5px;
-            list-style-type: none;
-            display: flex;
-            align-items: center;
-
-            button {
-                margin: 1vw;
+            .card{
+                flex: 1;
+                padding-left: 10px;
+                background-color: $grey1;
+                border-radius: 5px;
+                list-style-type: none;
+                display: flex;
+                align-items: center;
+    
+                button {
+                    margin: 1vw;
+                }
             }
         }
 

@@ -13,17 +13,17 @@ const UserInfos = ({ keyData }) => {
   ];
 
   return (
-    <ul>
+    <div className="cards">
       {items.map((item, index) => (
-        <li key={index}>
+        <div className="card" key={index}>
           <ButtonWithIcon svgIcon={<img src={item.svg} alt={item.alt} />} color={item.color} />
           <div className="infos-btn">
             <h4 className="infos-btn-value">{item.value}</h4>
             <p className="infos-btn-title">{item.label}</p>
           </div>
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 };
 
