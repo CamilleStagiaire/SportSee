@@ -1,5 +1,5 @@
-import React, { createContext, useState, useEffect} from 'react';
-import { fetchUserProfileMock, fetchUserActivityMock, fetchUserAverageSessionsMock, fetchUserPerformanceMock } from '../services/mockApiService';
+import React, { createContext, useState } from 'react';
+import { fetchDataFactory } from '../services/dataFactory';
 
 export const UserContext = createContext();
 
@@ -9,32 +9,35 @@ export const UserProfileProvider = ({ children }) => {
   const [userAverageSessions, setUserAverageSessions] = useState(null);
   const [userPerformance, setUserPerformance] = useState(null);
 
-  const USER_ID = 18;
+  const fetchData = async (userId) => {
+    try {
+      const profile = await fetchDataFactory('profile', userId);
+      const activity = await fetchDataFactory('activity', userId);
+      const averageSessions = await fetchDataFactory('averageSessions', userId);
+      const performance = await fetchDataFactory('performance', userId);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const profile = await fetchUserProfileMock(USER_ID);
-        const activity = await fetchUserActivityMock(USER_ID);
-        const averageSessions = await fetchUserAverageSessionsMock(USER_ID);
-        const performance = await fetchUserPerformanceMock(USER_ID);
-
-        setUserProfile(profile);
-        setUserActivity(activity);
-        setUserAverageSessions(averageSessions);
-        setUserPerformance(performance);
-      } catch (error) {
-        console.error('Une erreur est survenue:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
+      setUserProfile(profile.data);
+      setUserActivity(activity.data);
+      setUserAverageSessions(averageSessions.data);
+      setUserPerformance(performance.data);
+    } catch (error) {
+      console.error('Une erreur est survenue:', error);
+    }
+  };
 
   return (
-    <UserContext.Provider value={{ userProfile, userActivity, userAverageSessions, userPerformance }}>
+    <UserContext.Provider
+      value={{
+        userProfile,
+        userActivity,
+        userAverageSessions,
+        userPerformance,
+        fetchData
+      }}
+    >
       {children}
     </UserContext.Provider>
   );
 };
 
+export default UserProfileProvider;

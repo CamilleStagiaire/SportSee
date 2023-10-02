@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import UserInfos from '../../components/UserInformations';
 import UserActivity from '../../components/userActivity';
 import UserAverageSessions from '../../components/userAverageSessions';
@@ -7,8 +8,23 @@ import UserScore from '../../components/userScore';
 import { UserContext } from '../../contexts/UserContext';
 
 function Home() {
-  const { userProfile, userActivity, userAverageSessions, userPerformance } =
-    useContext(UserContext);
+  const { id } = useParams();
+  const { 
+    userProfile, 
+    userActivity, 
+    userAverageSessions, 
+    userPerformance, 
+    fetchData
+  } = useContext(UserContext);
+
+  useEffect(() => {
+    if (id) {
+      fetchData(id);
+    }
+  }, [id, fetchData]);
+
+
+    
   return (
     <main>
       {userProfile ? (
@@ -26,9 +42,10 @@ function Home() {
           </div>
           <div className="dashboard">
             <div className="dashboard-user">
-              <UserActivity data={userActivity} />
+            <UserActivity data={userActivity.sessions || userActivity} />
+
               <div className="dashboard-graphs">
-                <UserAverageSessions data={userAverageSessions} />
+              <UserAverageSessions data={userAverageSessions.sessions || userAverageSessions} />
                 <UserPerformance data={userPerformance} />
                 <UserScore
                   score={userProfile?.todayScore ?? userProfile?.score}
