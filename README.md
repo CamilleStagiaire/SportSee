@@ -34,11 +34,14 @@ composant UserScore pour le PieChart
 - styles des graphiques  
 
 - composant UserInfos  
+- composant Card  
 - composant Button
 
 - style de la page  
 
 - page d'erreur  
+
+- mise en place du Factory et des calls HTTP  
 
 # Compétences évaluées:
 

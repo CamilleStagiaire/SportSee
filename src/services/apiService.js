@@ -1,3 +1,5 @@
+
+
 const API_URL = "http://localhost:3000";
 
 export const fetchUserProfile = async (userId) => {
@@ -11,7 +13,7 @@ export const fetchUserProfile = async (userId) => {
 export const fetchUserActivity = async (userId) => {
   const response = await fetch(`${API_URL}/user/${userId}/activity`);
   if (!response.ok) {
-    console.log('Response data:', await response.text());
+
     throw new Error('Erreur lors de la récupération des activités de l\'utilisateur.');
   }
   return await response.json();

@@ -9,12 +9,12 @@ import { UserContext } from '../../contexts/UserContext';
 
 function Home() {
   const { id } = useParams();
-  const { 
-    userProfile, 
-    userActivity, 
-    userAverageSessions, 
-    userPerformance, 
-    fetchData
+  const {
+    userProfile,
+    userActivity,
+    userAverageSessions,
+    userPerformance,
+    fetchData,
   } = useContext(UserContext);
 
   useEffect(() => {
@@ -23,8 +23,6 @@ function Home() {
     }
   }, [id, fetchData]);
 
-
-    
   return (
     <main>
       {userProfile ? (
@@ -42,10 +40,10 @@ function Home() {
           </div>
           <div className="dashboard">
             <div className="dashboard-user">
-            <UserActivity data={userActivity.sessions || userActivity} />
+              <UserActivity data={userActivity.sessions} />
 
               <div className="dashboard-graphs">
-              <UserAverageSessions data={userAverageSessions.sessions || userAverageSessions} />
+                <UserAverageSessions data={userAverageSessions.sessions} />
                 <UserPerformance data={userPerformance} />
                 <UserScore
                   score={userProfile?.todayScore ?? userProfile?.score}

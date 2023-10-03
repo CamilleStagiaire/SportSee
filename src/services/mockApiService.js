@@ -1,5 +1,6 @@
 import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from '../data/data';
 
+
 const findData = (dataSet, userIdKey, userId) => {
     const numericUserId = Number(userId);
     const data = dataSet.find(item => item[userIdKey] === numericUserId);
