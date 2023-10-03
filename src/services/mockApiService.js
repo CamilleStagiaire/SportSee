@@ -1,4 +1,5 @@
 import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from '../data/data';
+import { UserMainData, UserActivity, UserAverageSessions, UserPerformance } from '../models/User';
 
 
 const findData = (dataSet, userIdKey, userId) => {
@@ -11,22 +12,21 @@ const findData = (dataSet, userIdKey, userId) => {
 }
 
 export const fetchUserProfileMock = async (userId) => {
-    return findData(USER_MAIN_DATA, 'id', userId);
+    const { data } = findData(USER_MAIN_DATA, 'id', userId);
+    return new UserMainData(data.id, data.userInfos, data.score, data.keyData, data.todayScore);
 }
 
 export const fetchUserActivityMock = async (userId) => {
-    return findData(USER_ACTIVITY, 'userId', userId);
+    const { data } = findData(USER_ACTIVITY, 'userId', userId);
+    return new UserActivity(userId, data.sessions);
 }
 
 export const fetchUserAverageSessionsMock = async (userId) => {
-    return findData(USER_AVERAGE_SESSIONS, 'userId', userId);
+    const { data }  = findData(USER_AVERAGE_SESSIONS, 'userId', userId);
+    return new UserAverageSessions(userId, data.sessions);
 }
 
 export const fetchUserPerformanceMock = async (userId) => {
-    const result = findData(USER_PERFORMANCE, 'userId', userId);
-    result.data = {
-        data: result.data.data,
-        kind: result.data.kind
-    };
-    return result;
+    const { data } = findData(USER_PERFORMANCE, 'userId', userId);
+    return new UserPerformance(userId, data.kind, data.data);
 }

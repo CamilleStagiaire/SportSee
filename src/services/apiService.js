@@ -1,4 +1,4 @@
-
+import { UserMainData, UserActivity, UserAverageSessions, UserPerformance } from '../models/User';
 
 const API_URL = "http://localhost:3000";
 
@@ -7,16 +7,18 @@ export const fetchUserProfile = async (userId) => {
   if (!response.ok) {
     throw new Error('Erreur lors de la récupération des données de l\'utilisateur.');
   }
-  return await response.json();
+  const { data } = await response.json();
+  return new UserMainData(data.id, data.userInfos, data.score, data.keyData, data.todayScore);
 };
 
 export const fetchUserActivity = async (userId) => {
   const response = await fetch(`${API_URL}/user/${userId}/activity`);
   if (!response.ok) {
-
     throw new Error('Erreur lors de la récupération des activités de l\'utilisateur.');
   }
-  return await response.json();
+  const { data } = await response.json();
+  return new UserActivity(data.userId, data.sessions);
+
 };
 
 export const fetchUserAverageSessions = async (userId) => {
@@ -24,7 +26,8 @@ export const fetchUserAverageSessions = async (userId) => {
   if (!response.ok) {
     throw new Error('Erreur lors de la récupération des sessions moyennes de l\'utilisateur.');
   }
-  return await response.json();
+  const { data } = await response.json();
+  return new UserAverageSessions(data.userId, data.sessions);
 };
 
 export const fetchUserPerformance = async (userId) => {
@@ -32,5 +35,7 @@ export const fetchUserPerformance = async (userId) => {
   if (!response.ok) {
     throw new Error('Erreur lors de la récupération des performances de l\'utilisateur.');
   }
-  return await response.json();
+  const { data } = await response.json();
+  return new UserPerformance(data.userId, data.kind, data.data);
+
 };

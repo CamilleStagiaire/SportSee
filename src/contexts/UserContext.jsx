@@ -1,13 +1,6 @@
 import React, { createContext, useState, useCallback } from 'react';
 import { fetchDataFactory } from '../services/dataFactory';
 
-import {
-  UserMainData,
-  UserActivity,
-  UserAverageSessions,
-  UserPerformance
-} from '../models/User';
-
 export const UserContext = createContext();
 
 export const UserProfileProvider = ({ children }) => {
@@ -23,10 +16,10 @@ export const UserProfileProvider = ({ children }) => {
       const averageSessions = await fetchDataFactory('averageSessions', userId);
       const performance = await fetchDataFactory('performance', userId);
   
-      const userMainDataInstance = new UserMainData(profile.data.id, profile.data.userInfos, profile.data.score, profile.data.keyData, profile.data.todayScore);
-      const userActivityInstance = new UserActivity(activity.data.userId, activity.data.sessions);
-      const userAverageSessionsInstance = new UserAverageSessions(averageSessions.data.userId, averageSessions.data.sessions);
-      const userPerformanceInstance = new UserPerformance(performance.data.userId, performance.data.kind, performance.data.data);
+      const userMainDataInstance = profile;
+      const userActivityInstance = activity;
+      const userAverageSessionsInstance = averageSessions;
+      const userPerformanceInstance = performance;
   
       setUserProfile(userMainDataInstance);
       setUserActivity(userActivityInstance);
