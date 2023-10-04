@@ -43,6 +43,10 @@ composant UserScore pour le PieChart
 
 - mise en place du Factory et des calls HTTP  
 
+- classe User et formatage des données dans les services  
+
+- page de connexion
+
 # Compétences évaluées:
 
 - Assurer la qualité des données d'une application

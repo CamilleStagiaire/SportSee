@@ -186,3 +186,27 @@ main {
     align-items: center;
     font-size: 26px;
 }
+
+.login {
+    margin-left: 117px;
+    font-size: 26px;
+
+    &-text {
+        text-align: center;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        gap: 3vw;
+    }
+
+    li {
+        list-style-type: none;
+       
+    }
+    a {
+        color: $red1;
+        text-decoration: none;
+    }
+}

@@ -8,19 +8,19 @@ export const UserProfileProvider = ({ children }) => {
   const [userActivity, setUserActivity] = useState(null);
   const [userAverageSessions, setUserAverageSessions] = useState(null);
   const [userPerformance, setUserPerformance] = useState(null);
- 
+
   const fetchData = useCallback(async (userId) => {
     try {
       const profile = await fetchDataFactory('profile', userId);
       const activity = await fetchDataFactory('activity', userId);
       const averageSessions = await fetchDataFactory('averageSessions', userId);
       const performance = await fetchDataFactory('performance', userId);
-  
+
       const userMainDataInstance = profile;
       const userActivityInstance = activity;
       const userAverageSessionsInstance = averageSessions;
       const userPerformanceInstance = performance;
-  
+
       setUserProfile(userMainDataInstance);
       setUserActivity(userActivityInstance);
       setUserAverageSessions(userAverageSessionsInstance);

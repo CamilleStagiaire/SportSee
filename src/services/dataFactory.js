@@ -1,10 +1,8 @@
 import { fetchUserProfile, fetchUserActivity, fetchUserAverageSessions, fetchUserPerformance } from './apiService';  
 import { fetchUserProfileMock, fetchUserActivityMock, fetchUserAverageSessionsMock, fetchUserPerformanceMock } from './mockApiService';
 
-
   const USE_MOCK_DATA = true;
 
-  
   export const fetchDataFactory = (type, userId) => {
     if (USE_MOCK_DATA) {
       switch (type) {
