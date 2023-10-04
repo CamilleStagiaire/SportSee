@@ -45,7 +45,9 @@ composant UserScore pour le PieChart
 
 - classe User et formatage des données dans les services  
 
-- page de connexion
+- page de connexion  
+
+- gestion des cas d'erreurs  
 
 # Compétences évaluées:
 

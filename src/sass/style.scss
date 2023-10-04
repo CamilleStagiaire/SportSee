@@ -1,4 +1,5 @@
 @import "utils/variables.scss";
+@import "utils/mixins.scss";
 @import '../components/userActivity/barChart.scss';
 @import '../components/userAverageSessions/lineChart.scss';
 @import '../components/UserPerformance/radarChart.scss';
@@ -181,20 +182,11 @@ main {
 }
 
 .error {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 26px;
+    @include message;
 }
 
 .login {
-    margin-left: 117px;
-    font-size: 26px;
-
-    &-text {
-        text-align: center;
-    }
-
+  @include message;
     ul {
         display: flex;
         justify-content: center;
@@ -205,8 +197,9 @@ main {
         list-style-type: none;
        
     }
-    a {
-        color: $red1;
-        text-decoration: none;
-    }
+}
+
+.error-message {
+    @include message;
+    
 }

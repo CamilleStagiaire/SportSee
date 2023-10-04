@@ -6,16 +6,11 @@ import UserAverageSessions from '../../components/userAverageSessions';
 import UserPerformance from '../../components/userPerformance';
 import UserScore from '../../components/userScore';
 import { UserContext } from '../../contexts/UserContext';
+import Error from '../../pages/Error';
 
 function Home() {
   const { id } = useParams();
-  const {
-    userProfile,
-    userActivity,
-    userAverageSessions,
-    userPerformance,
-    fetchData,
-  } = useContext(UserContext);
+  const { userProfile, userActivity, userAverageSessions, userPerformance, fetchData, error } = useContext(UserContext);
 
   useEffect(() => {
     if (id) {
@@ -23,6 +18,10 @@ function Home() {
     }
   }, [id, fetchData]);
 
+  if (error) {
+    return <Error message={error} />;
+  }
+  
   return (
     <main>
       {userProfile ? (

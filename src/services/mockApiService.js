@@ -8,7 +8,7 @@ const findData = (dataSet, userIdKey, userId) => {
     if (data) {
         return { data };
     }
-    throw new Error(`Données non trouvées pour cet utilisateur avec l'ID ${userId}`);
+    throw new Error("404");
 }
 
 export const fetchUserProfileMock = async (userId) => {

@@ -1,0 +1,19 @@
+@mixin link {
+    color: $red1;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+@mixin message {
+    margin-top: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 117px;
+    font-size: 26px;
+  
+    gap: 3vh;
+    a {
+        @include link;
+    }
+}
