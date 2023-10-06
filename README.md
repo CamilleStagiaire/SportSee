@@ -33,9 +33,10 @@ composant UserScore pour le PieChart
 
 - styles des graphiques  
 
-- composant UserInfos  
-- composant Card  
-- composant Button
+- autres composants:  
+composant UserInfos  
+composant Card  
+composant Button
 
 - style de la page  
 
@@ -48,6 +49,10 @@ composant UserScore pour le PieChart
 - page de connexion  
 
 - gestion des cas d'erreurs  
+
+- JSDoc  
+
+- revue de code
 
 # Compétences évaluées:
 

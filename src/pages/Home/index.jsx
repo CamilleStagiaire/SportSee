@@ -10,8 +10,8 @@ import Error from '../../pages/Error';
 
 function Home() {
   const { id } = useParams();
-  const { userProfile, userActivity, userAverageSessions, userPerformance, fetchData, error } = useContext(UserContext);
-
+  const { user, fetchData, error } = useContext(UserContext);
+//console.log(user);
   useEffect(() => {
     if (id) {
       fetchData(id);
@@ -21,16 +21,16 @@ function Home() {
   if (error) {
     return <Error message={error} />;
   }
-  
+
   return (
     <main>
-      {userProfile ? (
+      {user ? (
         <div className="home">
           <div className="home-text">
             <h1>
               Bonjour{' '}
               <span className="home-text-name">
-                {userProfile.userInfos.firstName}{' '}
+                {user.userInfos.firstName}{' '}
               </span>
             </h1>
             <p className="home-text-p">
@@ -39,18 +39,18 @@ function Home() {
           </div>
           <div className="dashboard">
             <div className="dashboard-user">
-              <UserActivity data={userActivity.sessions} />
+              <UserActivity data={user.activity} />
 
               <div className="dashboard-graphs">
-                <UserAverageSessions data={userAverageSessions.sessions} />
-                <UserPerformance data={userPerformance} />
+                <UserAverageSessions data={user.averageSessions} />
+                <UserPerformance data={user.performance} />
                 <UserScore
-                  score={userProfile?.todayScore ?? userProfile?.score}
+                  score={user?.score}
                 />
               </div>
             </div>
             <div className="dashboard-infos">
-              <UserInfos keyData={userProfile.keyData} />
+              <UserInfos keyData={user.keyData} />
             </div>
           </div>
         </div>
@@ -58,5 +58,4 @@ function Home() {
     </main>
   );
 }
-
 export default Home;

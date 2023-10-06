@@ -1,39 +1,32 @@
-import { UserMainData, UserActivity, UserAverageSessions, UserPerformance } from '../models/User';
+import User from '../models/User';
 
 const API_URL = 'http://localhost:3000';
 
-export const fetchUserProfile = async (userId) => {
-  const response = await fetch(`${API_URL}/user/${userId}`);
-  if (!response.ok) {
-    throw new Error(response.status);
+export const fetchUser = async (userId) => {
+  const mainDataResponse = await fetch(`${API_URL}/user/${userId}`);
+  if (!mainDataResponse.ok) {
+    throw new Error(mainDataResponse.status);
   }
-  const { data } = await response.json();
-  return new UserMainData(data.id, data.userInfos, data.score, data.keyData, data.todayScore);
-};
+  const mainData = await mainDataResponse.json();
+  console.log(mainData);
+  
+  const activityResponse = await fetch(`${API_URL}/user/${userId}/activity`);
+  if (!activityResponse.ok) {
+    throw new Error(activityResponse.status);
+  }
+  const activityData = await activityResponse.json();
 
-export const fetchUserActivity = async (userId) => {
-  const response = await fetch(`${API_URL}/user/${userId}/activity`);
-  if (!response.ok) {
-    throw new Error(response.status);
+  const averageSessionsResponse = await fetch(`${API_URL}/user/${userId}/average-sessions`);
+  if (!averageSessionsResponse.ok) {
+    throw new Error(averageSessionsResponse.status);
   }
-  const { data } = await response.json();
-  return new UserActivity(data.userId, data.sessions);
-};
+  const averageSessionsData = await averageSessionsResponse.json();
 
-export const fetchUserAverageSessions = async (userId) => {
-  const response = await fetch(`${API_URL}/user/${userId}/average-sessions`);
-  if (!response.ok) {
-    throw new Error(response.status);
+  const performanceResponse = await fetch(`${API_URL}/user/${userId}/performance`);
+  if (!performanceResponse.ok) {
+    throw new Error(performanceResponse.status);
   }
-  const { data } = await response.json();
-  return new UserAverageSessions(data.userId, data.sessions);
-};
+  const performanceData = await performanceResponse.json();
 
-export const fetchUserPerformance = async (userId) => {
-  const response = await fetch(`${API_URL}/user/${userId}/performance`);
-  if (!response.ok) {
-    throw new Error(response.status);
-  }
-  const { data } = await response.json();
-  return new UserPerformance(data.userId, data.kind, data.data);
-};
+  return new User(mainData.data, activityData.data, averageSessionsData.data, performanceData.data);
+}

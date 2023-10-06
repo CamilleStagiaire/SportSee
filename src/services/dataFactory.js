@@ -1,36 +1,14 @@
-import { fetchUserProfile, fetchUserActivity, fetchUserAverageSessions, fetchUserPerformance } from './apiService';
-import { fetchUserProfileMock, fetchUserActivityMock, fetchUserAverageSessionsMock, fetchUserPerformanceMock } from './mockApiService';
+import { fetchUser } from './apiService';
+import { fetchUserMock} from './mockApiService';
 
 const USE_MOCK_DATA = false;
 
-export const fetchDataFactory = (type, userId) => {
+export const fetchDataFactory = async (userId) => {
   if (USE_MOCK_DATA) {
-    switch (type) {
-      case 'profile':
-        console.log('données mockées');
-        return fetchUserProfileMock(userId);
-      case 'activity':
-        return fetchUserActivityMock(userId);
-      case 'averageSessions':
-        return fetchUserAverageSessionsMock(userId);
-      case 'performance':
-        return fetchUserPerformanceMock(userId);
-      default:
-        throw new Error('Type non valide');
-    }
+    console.log('données mockées');
+    return fetchUserMock(userId);
   } else {
-    switch (type) {
-      case 'profile':
-        console.log("Données de l'API");
-        return fetchUserProfile(userId);
-      case 'activity':
-        return fetchUserActivity(userId);
-      case 'averageSessions':
-        return fetchUserAverageSessions(userId);
-      case 'performance':
-        return fetchUserPerformance(userId);
-      default:
-        throw new Error('Type non valide');
-    }
+    console.log("Données de l'API");
+    return fetchUser(userId);
   }
-};
+}
