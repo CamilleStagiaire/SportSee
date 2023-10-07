@@ -42,7 +42,7 @@ composant Button
 
 - page d'erreur  
 
-- mise en place du Factory et des calls HTTP  
+- mise en place de la factory et des calls HTTP  
 
 - classe User et formatage des données dans les services  
 

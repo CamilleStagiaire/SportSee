@@ -6,6 +6,11 @@ const COLORS = {
   TICKS: SCSS_COLORS.white,
 };
 
+/**
+ * Transformer les données pour être utilisées dans le RadarChart
+ * @param {object} data
+ * @returns {Array}
+ */
 const transformData = ({ data }) => {
   const translationData = {
     1: 'Cardio',
@@ -24,6 +29,11 @@ const transformData = ({ data }) => {
   }));
 };
 
+/**
+ * Composant principal du RadarChart
+ * @param {object} data
+ * @returns {React.Element}
+ */
 const UserPerformance = ({ data }) => {
   const transformedData = transformData(data);
 

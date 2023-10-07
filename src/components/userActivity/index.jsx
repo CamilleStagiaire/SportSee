@@ -9,6 +9,11 @@ const COLORS = {
   XAXIS_STROKE: SCSS_COLORS.grey2,
 };
 
+/**
+ * Tooltip personnalisée
+ * @param {Array} props.payload
+ * @returns {React.Element|null}
+ */
 const CustomTooltip = ({ payload }) => {
   if (payload && payload.length) {
     return (
@@ -20,6 +25,11 @@ const CustomTooltip = ({ payload }) => {
   }
 };
 
+/**
+ * Légende personnalisée
+ * @param {Array} props.payload
+ * @returns {React.Element}
+ */
 const CustomLegend = ({ payload }) => (
   <div className="barChart-legend">
     <div className="barChart-legend-title">Activité quotidienne</div>
@@ -36,6 +46,11 @@ const CustomLegend = ({ payload }) => (
   </div>
 );
 
+/**
+ * Composant principal du BarChart
+ * @param {Array} props.data
+ * @returns {React.Element}
+ */
 const UserActivity = ({ data }) => {
   const kgValues = data.map((d) => d.kilogram);
   const minKg = Math.min(...kgValues);

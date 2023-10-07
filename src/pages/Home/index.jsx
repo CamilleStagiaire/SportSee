@@ -8,10 +8,13 @@ import UserScore from '../../components/userScore';
 import { UserContext } from '../../contexts/UserContext';
 import Error from '../../pages/Error';
 
+/**
+ * Composant de la page d'accueil
+ * @returns {React.Element}
+ */
 function Home() {
   const { id } = useParams();
   const { user, fetchData, error } = useContext(UserContext);
-//console.log(user);
   useEffect(() => {
     if (id) {
       fetchData(id);
@@ -45,12 +48,12 @@ function Home() {
                 <UserAverageSessions data={user.averageSessions} />
                 <UserPerformance data={user.performance} />
                 <UserScore
-                  score={user?.score}
+                  score={user.score}
                 />
               </div>
             </div>
             <div className="dashboard-infos">
-              <UserInfos keyData={user.keyData} />
+              <UserInfos data={user.keyData} />
             </div>
           </div>
         </div>

@@ -1,4 +1,10 @@
 class User {
+    /**
+     * @param {object} mainData
+     * @param {object} activityData 
+     * @param {object} averageSessionsData 
+     * @param {object} performanceData 
+     */
     constructor(mainData, activityData, averageSessionsData, performanceData) {
         this.id = mainData.id;
         this.userInfos = {

@@ -6,10 +6,19 @@ const COLORS = {
   CIRCLE: SCSS_COLORS.white,
 };
 
+/**
+ * Légende personnalisée
+ * @returns {React.Element} 
+ */
 const CustomLegend = () => {
   return <div className="radialBarChart-legend"> Score </div>;
 };
 
+/**
+ * Composant principal du RadialBarChart
+ * @param {number} props.score
+ * @returns {React.Element}
+ */
 const UserScore = ({ score }) => {
   const data = [
     { name: 'Score', value: score * 100 },

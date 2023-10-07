@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
 
+/**
+ * Composant de la page de connexion
+ * @returns {React.Element}
+ */
 function Login() {
     const allUsers = [
         { id: 12, firstName: 'Karl' },

@@ -2,13 +2,19 @@ import User from '../models/User';
 
 const API_URL = 'http://localhost:3000';
 
+/**
+ * Récupèrer les données de l'utilisateur depuis l'API
+ * @async
+ * @param {string} userId 
+ * @returns {Promise<User>} 
+ * @throws {Error}
+ */
 export const fetchUser = async (userId) => {
   const mainDataResponse = await fetch(`${API_URL}/user/${userId}`);
   if (!mainDataResponse.ok) {
     throw new Error(mainDataResponse.status);
   }
   const mainData = await mainDataResponse.json();
-  console.log(mainData);
   
   const activityResponse = await fetch(`${API_URL}/user/${userId}/activity`);
   if (!activityResponse.ok) {
