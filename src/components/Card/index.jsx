@@ -1,6 +1,7 @@
 import ButtonWithIcon from '../ButtonWithIcon';
 
 /**
+ * Composant Card affichant les informations
  * @param {string} props.svg
  * @param {string} props.alt
  * @param {string} props.color

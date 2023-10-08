@@ -30,7 +30,7 @@ function Home() {
       {user ? (
         <div className="home">
           <div className="home-text">
-            <h1>
+            <h1 className="home-title">
               Bonjour{' '}
               <span className="home-text-name">
                 {user.userInfos.firstName}{' '}

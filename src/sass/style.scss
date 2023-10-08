@@ -12,59 +12,11 @@ body {
     margin: auto;
 }
 
-h1 {
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-}
-
-.home-text {
-
-    h1 {
-        font-size: 48px;
-    }
-
-    margin: auto;
-    width: 90%;
-
-    &-p {
-        margin-bottom: 4vh;
-    }
-
-    &-name {
-        color: $red2;
-    }
-}
-
-.lefSideBar {
-    position: absolute;
-    width: 117px;
-    height: 100vh;
-    background-color: $black1;
-    color: $white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10vh;
-
-    .lefSideBar-buttons {
-        gap: 2vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .lefSideBar-text {
-        writing-mode: vertical-lr;
-        transform: rotate(180deg);
-        margin: 7vh 0;
-        font-size: 12px;
-    }
-}
-
 header {
     background-color: $black1;
     display: flex;
     justify-content: space-between;
+    gap: 2vw;
     z-index: 999;
     height: 91px;
 
@@ -85,7 +37,36 @@ header {
         a {
             text-decoration: none;
             color: $white;
+            font-size: 24px;
+            font-weight: 500;
         }
+    }
+}
+
+.lefSideBar {
+    position: absolute;
+    width: 117px;
+    height: 100vh;
+    background-color: $black1;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10vh;
+
+    &-buttons {
+        gap: 2vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-text {
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+        margin: 7vh 0;
+        font-size: 12px;
+        font-weight: 500;
     }
 }
 
@@ -94,14 +75,30 @@ main {
     height: 100%;
 }
 
-.home {
+.home  {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     &-text {
+        margin: auto;
+        width: 90%;
         margin-bottom: 2vh;
+
+        &-p {
+            margin-bottom: 4vh;
+        }
+
+        &-name {
+            color: $red2;
+        }
+    }
+
+    &-title {
+        font-size: 48px;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
     }
 }
 
@@ -132,7 +129,7 @@ main {
             flex-direction: column;
             gap: 3vh;
 
-            .card{
+            .card {
                 flex: 1;
                 padding-left: 10px;
                 background-color: $grey1;
@@ -140,7 +137,7 @@ main {
                 list-style-type: none;
                 display: flex;
                 align-items: center;
-    
+
                 button {
                     margin: 1vw;
                 }
@@ -154,7 +151,7 @@ main {
                 font-weight: 700;
                 color: $black3;
             }
-    
+
             &-title {
                 margin: 10px;
                 font-size: 14px;
@@ -181,12 +178,8 @@ main {
     border-radius: 7px;
 }
 
-.error {
-    @include message;
-}
-
 .login {
-  @include message;
+    @include message;
     ul {
         display: flex;
         justify-content: center;
@@ -195,11 +188,9 @@ main {
 
     li {
         list-style-type: none;
-       
     }
 }
 
-.error-message {
+.error {
     @include message;
-    
 }

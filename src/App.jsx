@@ -11,13 +11,11 @@ function App() {
     <Router>
      <LeftSideBar />
       <TopNavBar />
-     
       <Routes>
         <Route path="/" element={<Login/>} />
         <Route path="/user/:id" element={<Home />} />
         <Route path="*" element={<Error />} />
       </Routes>
-   
     </Router>
   );
 }

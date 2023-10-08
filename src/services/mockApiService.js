@@ -19,7 +19,7 @@ const findData = (dataSet, userIdKey, userId) => {
 }
 
 /**
- * Récupèrer les données des données mockées
+ * Récupèrer les données mockées
  * @async
  * @param {string} userId 
  * @returns {Promise<User>}
