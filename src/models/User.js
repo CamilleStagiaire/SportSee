@@ -19,18 +19,8 @@ class User {
             carbohydrateCount: mainData.keyData.carbohydrateCount,
             lipidCount: mainData.keyData.lipidCount,
         };
-        
-        this.activity = activityData.sessions.map(session => ({
-            day: session.day,
-            kilogram: session.kilogram,
-            calories: session.calories,
-        }));
-        
-        this.averageSessions = averageSessionsData.sessions.map(session => ({
-            day: session.day,
-            sessionLength: session.sessionLength,
-        }));
-
+        this.activity = activityData.sessions;
+        this.averageSessions = averageSessionsData.sessions;
         this.performance = {
             kind: performanceData.kind,
             data: performanceData.data,
